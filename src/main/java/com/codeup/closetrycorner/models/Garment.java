@@ -17,7 +17,7 @@ public class Garment {
     private String image;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "post")
-    private List<Outfits> Outfit;
+    private List<Outfit> Outfit;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

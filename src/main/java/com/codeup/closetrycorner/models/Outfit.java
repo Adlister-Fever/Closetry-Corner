@@ -1,6 +1,7 @@
 package com.codeup.closetrycorner.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "outfit")
@@ -15,6 +16,9 @@ public class Outfit {
 
     @Column
     private String date;
+
+    @ManyToMany(mappedBy = "outfits")
+    private List<Garment> garments;
 
     public Outfit(String description, String date) {
         this.description = description;

@@ -1,11 +1,11 @@
-package com.example.closetrycorner.models;
+package com.codeup.closetrycorner.models;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name=garments)
-public class Garments {
+public class Garment {
     @Id
     @GeneratedValue
     private int id;

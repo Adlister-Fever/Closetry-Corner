@@ -1,9 +1,9 @@
-package com.example.closetrycorner.controllers;
+package com.codeup.closetrycorner.controllers;
 
 import com.codeup.closetrycorner.models.User;
 import com.codeup.closetrycorner.services.UserSvc;
 import com.codeup.closetrycorner.services.UsersRepo;
-import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,8 +26,9 @@ public class UserController {
 
     @PostMapping("/register")
     public String saveUser(@ModelAttribute User user){
-        String hash = passwordEncoder.encode(user.getPassword());
-        user.setPassword(hash);
+//        String hash = passwordEncoder.encode(user.getPassword());
+//        user.setPassword(hash);
+        user.setPassword(user.getPassword());
         userSvc.save(user);
         return "redirect:/garments";
     }

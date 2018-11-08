@@ -17,7 +17,7 @@ public class Outfit {
     @Column
     private String date;
 
-    @ManyToMany(mappedBy = "outfit")
+    @ManyToMany(mappedBy = "outfits")
     private List<Garment> garments;
 
     public Outfit(String description, String date) {

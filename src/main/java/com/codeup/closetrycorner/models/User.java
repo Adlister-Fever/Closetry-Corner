@@ -23,8 +23,8 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Garment> garments;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    private List<User> users;
+//    @OneToOne(cascade = CascadeType.ALL, mappedBy = "users")
+//    private List<User> users;
 
     public User(int id, String username, String email, String password) {
         this.id = id;

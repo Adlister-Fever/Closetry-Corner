@@ -1,14 +1,14 @@
-package com.example.closetrycorner.controllers;
+package com.codeup.closetrycorner.controllers;
 
 import com.codeup.closetrycorner.models.User;
 import com.codeup.closetrycorner.services.UserSvc;
-import com.codeup.closetrycorner.services.UsersRepo;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+
+//import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Controller
 public class UserController {
@@ -16,6 +16,11 @@ public class UserController {
 
     public UserController(UserSvc users) {
         this.userSvc = users;
+    }
+
+    @GetMapping("/home")
+    public String showHomepage() {
+        return "/index";
     }
 
     @GetMapping("/register")
@@ -26,8 +31,9 @@ public class UserController {
 
     @PostMapping("/register")
     public String saveUser(@ModelAttribute User user){
-        String hash = passwordEncoder.encode(user.getPassword());
-        user.setPassword(hash);
+//        String hash = passwordEncoder.encode(user.getPassword());
+//        user.setPassword(hash);
+        user.setPassword(user.getPassword());
         userSvc.save(user);
         return "redirect:/garments";
     }

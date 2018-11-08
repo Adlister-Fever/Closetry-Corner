@@ -1,11 +1,11 @@
-package com.example.closetrycorner.models;
+package com.codeup.closetrycorner.models;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name=garments)
-public class Garments {
+@Table(name="garment")
+public class Garment {
     @Id
     @GeneratedValue
     private int id;
@@ -17,7 +17,7 @@ public class Garments {
     private String image;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "post")
-    private List<Outfits> Outfit;
+    private List<Outfit> Outfit;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

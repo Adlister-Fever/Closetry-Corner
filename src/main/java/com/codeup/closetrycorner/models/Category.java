@@ -1,6 +1,7 @@
 package com.codeup.closetrycorner.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "category")
@@ -13,12 +14,12 @@ public class Category {
     @Column(nullable = false)
     private String name;
 
-    @ManyToMany
-    private Garment garment;
+    @ManyToMany(mappedBy = "categories")
+    private List<Garment> garments;
 
-    public Category(String name, Garment garment) {
+    public Category(long id, String name) {
+        this.id = id;
         this.name = name;
-        this.garment = garment;
     }
 
     public long getId() {
@@ -37,11 +38,5 @@ public class Category {
         this.name = name;
     }
 
-    public Garment getGarment() {
-        return garment;
-    }
 
-    public void setGarment(Garment garment) {
-        this.garment = garment;
-    }
 }

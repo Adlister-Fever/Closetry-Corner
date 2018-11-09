@@ -7,23 +7,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 //import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Controller
 public class UserController {
     private UserSvc userSvc;
-    private PasswordEncoder passwordEncoder;
+//    private PasswordEncoder passwordEncoder;
 
 
 //    public UserController(UserSvc users) {
 //        this.userSvc = users;
 //    }
 
-    @GetMapping("/")
-    public String landing(){
-        return "index";
-    }
 
     @GetMapping("/home")
     public String showHomepage() {

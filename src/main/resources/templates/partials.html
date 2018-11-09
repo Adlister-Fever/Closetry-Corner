@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head th:fragment="header">
     <meta charset="UTF-8" />
     <meta name="viewport"
@@ -15,7 +15,13 @@
 </head>
 <body>
 index  page
-
+<div th:fragment="logout">
+    <div sec:authorize="isAuthenticated()" class="nav-item navy border rounded p-2 mr-2">
+        <form th:action="@{/logout}" th:method="post">
+            <button class="btn-link btn navy my-auto" style="margin-top: 8px">Logout</button>
+        </form>
+    </div>
+</div>
 
 <footer th:fragment="footer">
      <!--UIkit JS-->

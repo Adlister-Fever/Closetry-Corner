@@ -23,8 +23,8 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Garment> garments;
 
-//    @OneToOne(cascade = CascadeType.ALL, mappedBy = "users")
-//    private List<User> users;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="followers")
+    private List<Follower> followers;
 
     public User(int id, String username, String email, String password) {
         this.id = id;
@@ -48,6 +48,7 @@ public class User {
         this.email = email;
         this.password = password;
     }
+
     public User(boolean open) {
         this.open = open;
     }

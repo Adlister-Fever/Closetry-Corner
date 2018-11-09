@@ -10,4 +10,7 @@ public class HomeController {
     public String landing(){
         return "index";
     }
+
+    @GetMapping("/closet")
+    public String closet(){ return "closet";}
 }

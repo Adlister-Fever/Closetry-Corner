@@ -37,7 +37,7 @@ public class GarmentController {
     }
 
 
-//           -----  THIS METHOD WORKS FOR FINDING ALL GARMENTS BY USER BUT NEEEDS CORRECTED MAPPING AND RETURN------------------
+//           -----  THIS METHOD WORKS FOR FINDING ALL GARMENTS BY USER BUT NEEDS CORRECTED MAPPING AND RETURN------------------
 
 //    @GetMapping("/closet/{id}")
 //    public String showUserGarments(@PathVariable int id, Model vModel){

@@ -30,7 +30,7 @@ public class UserController {
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         userSvc.save(user);
-        return "redirect:/garments";
+        return "redirect:users/login";
     }
 
 }

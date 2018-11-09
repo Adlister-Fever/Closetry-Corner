@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/partials :: header"/>
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Fluid jumbotron</h1>
+            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        </div>
+    </div>
+    <div class="container-fluid">
+        inside container
+    </div>
 
-<head th:replace="partials :: head">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <meta charset="UTF-8"/>
-    <title>Title</title>
-</head>
-<body class="uk-container">
-<div>
-    <h1 class="uk-heading-bullet">If you can read this, something has somehow gone terribly right.</h1>
-</div>
-<div><img src="HatchfulExport-All/facebook_cover_photo_2.png" alt="logo"/></div>
 
 <footer th:replace="partials :: footer"></footer>
 </body>

@@ -1,13 +1,12 @@
 package com.codeup.closetrycorner.controllers;
 
-import org.springframework.stereotype.Controller;
 import com.codeup.closetrycorner.models.User;
 import com.codeup.closetrycorner.services.UserSvc;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 //import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -21,11 +20,6 @@ public class UserController {
 //        this.userSvc = users;
 //    }
 
-
-    @GetMapping("/home")
-    public String showHomepage() {
-        return "index";
-    }
 
     @GetMapping("/register")
     public String showSignupForm(Model model){

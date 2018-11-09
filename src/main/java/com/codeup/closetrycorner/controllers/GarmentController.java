@@ -1,7 +1,6 @@
 package com.codeup.closetrycorner.controllers;
 
 import com.codeup.closetrycorner.models.Garment;
-import com.codeup.closetrycorner.models.User;
 import com.codeup.closetrycorner.services.CatSvc;
 import com.codeup.closetrycorner.services.GarmentSvc;
 import com.codeup.closetrycorner.services.UserSvc;
@@ -31,12 +30,21 @@ public class GarmentController {
         return "/closet/index";
     }
 
-    @GetMapping("/closet/{id}")
-    public String showUserGarments(@PathVariable int id, Model vModel){
-        User currentUser = userSvc.findOne(id);
-        vModel.addAttribute("garments", garmentSvc.findAllForUser(currentUser));
+    @GetMapping("closet/{id}")
+    public String showOneGarment(@PathVariable int id, Model vModel){
+        vModel.addAttribute("garment", garmentSvc.findOne(id));
         return "closet/show";
     }
+
+
+//           -----  THIS METHOD WORKS FOR FINDING ALL GARMENTS BY USER BUT NEEEDS CORRECTED MAPPING AND RETURN------------------
+
+//    @GetMapping("/closet/{id}")
+//    public String showUserGarments(@PathVariable int id, Model vModel){
+//        User currentUser = userSvc.findOne(id);
+//        vModel.addAttribute("garments", garmentSvc.findAllForUser(currentUser));
+//        return "closet/show";
+//    }
 
 
 

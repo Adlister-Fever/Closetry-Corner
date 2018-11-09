@@ -1,8 +1,8 @@
 package com.codeup.closetrycorner.controllers;
 
+import org.springframework.stereotype.Controller;
 import com.codeup.closetrycorner.models.User;
 import com.codeup.closetrycorner.services.UserSvc;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,13 +14,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class UserController {
     private UserSvc userSvc;
 
-    public UserController(UserSvc users) {
-        this.userSvc = users;
+//    public UserController(UserSvc users) {
+//        this.userSvc = users;
+//    }
+
+    @GetMapping("/")
+    public String landing(){
+        return "index";
     }
 
     @GetMapping("/home")
     public String showHomepage() {
-        return "/index";
+        return "index";
     }
 
     @GetMapping("/register")

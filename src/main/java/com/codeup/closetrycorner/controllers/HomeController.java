@@ -2,7 +2,6 @@ package com.codeup.closetrycorner.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 //get mapping for /
 //return string that says this is the landing pge
@@ -12,7 +11,4 @@ public class HomeController {
     public String landing(){
         return "index";
     }
-
-    @GetMapping("/closet")
-    public String closet(){ return "closet";}
 }

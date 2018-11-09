@@ -20,7 +20,7 @@ public class UserController {
 
     @GetMapping("/home")
     public String showHomepage() {
-        return "/index";
+        return "index";
     }
 
     @GetMapping("/register")

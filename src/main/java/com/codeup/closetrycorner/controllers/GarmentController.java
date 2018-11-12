@@ -26,8 +26,8 @@ public class GarmentController {
 
     @GetMapping("/closet")
     public String showAllGarments(Model vModel){
-        vModel.addAttribute("garments", garmentSvc.findAll());
-        return "/closet/index";
+//        vModel.addAttribute("garments", garmentSvc.findAll());
+        return "closet";
     }
 
     @GetMapping("closet/{id}")

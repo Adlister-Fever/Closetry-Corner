@@ -11,6 +11,6 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/closet")
-    public String closet(){ return "closet";}
+//    @GetMapping("/closet")
+//    public String closet(){ return "redirect:closet";}
 }

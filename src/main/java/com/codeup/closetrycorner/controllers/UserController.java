@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -30,7 +31,12 @@ public class UserController {
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         userSvc.save(user);
-        return "redirect:users/login";
+        return "login";
+    }
+    @GetMapping("/closet/user")
+    public String showUser(@ModelAttribute User user, Model vmodel){
+        vmodel.addAttribute("user", user);
+        return "users/user";
     }
 
 }

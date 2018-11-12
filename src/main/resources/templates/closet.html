@@ -7,8 +7,16 @@
         <h1 class="display-4">Hello, User!</h1>
     </div>
 </div>
-<div class="container-fluid bg-light h-100">
+<div class="container-fluid6yΩ∞† bg-light h-100">
+
+    <button id="open">Open Picker</button>
+
+    <button id="close">Close Picker</button>
+    <div class="picker-content" style="height=300px; width=250px;"></div>
+
+    <!--//form to search through inventory-->
     <input type="search" class="form-control w-100" placeholder="Search..."/>
+    <!--here is the MEAT of the inventory-->
     <div class="row" style="height: 66vh;">
         <ul class="nav nav-tabs">
             <li class="nav-item">
@@ -19,9 +27,25 @@
             </li>
         </ul>
     </div>
+
 </div>
-<button type="button" class="btn btn-dark w-100">Register for Free</button>
 
 <div th:replace="fragments/partials :: footer"/>
+<script src="//static.filestackapi.com/filestack-js/1.x.x/filestack.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', function () {
+        const apikey = 'AtXT24mWXSGUvgcRzV7JQz';
+        const client = filestack.init(apikey);
+        const options = {
+                maxFiles: 20,
+                uploadInBackground: false,
+                onOpen: () => console.log('opened!'),
+            onUploadDone: (res) => console.log(res),
+    };
+        $();
+        client.picker(options).open();
+    });
+</script>
+
 </body>
 </html>

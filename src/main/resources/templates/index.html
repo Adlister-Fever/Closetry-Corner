@@ -2,29 +2,64 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/partials :: header"/>
 <body>
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">Closetry Corner</h1>
-            <p class="lead"><em>Interesting Slogan Here.</em></p>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Closetry Corner</h1>
+        <p class="lead"><em>Interesting Slogan Here.</em></p>
+    </div>
+</div>
+<div class="container-fluid bg-light h-100">
+    <div class="row" style="height: 66vh;">
+        <div class="col-sm-6 bg-primary" id="col-1">column 1
+
+            <div class="card">
+                <div class="card-body">hello1</div>
+            </div>
+            <div class="card">
+                <div class="card-body">Hello2</div>
+            </div>
+
+        </div>
+        <div class="col-sm-6 bg-secondary" id="col-2">column 2
+
+            <div class="card">
+                <img class="card-img" src="assets/girl-in-dress.jpg" alt="card-image"/>
+                <div class="card-img-overlay">
+                    <p class="card-text">Create Outfits</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img" src="/templates/assets/man-viewing-phone.jpg" alt="card-image"></img>
+                <div class="card-img overlay">
+                    <p class="card-text">Hello4</p>
+                </div>
+            </div>
+
         </div>
     </div>
-    <div class="container-fluid bg-light h-100">
-        <div class="row" style="height: 66vh;">
-            <div class="col bg-primary" id="col-1">column 1
-                <div class="card"><div class="card-body">Hello</div></div>
-                <div class="card"><div class="card-body">Hello2</div></div>
-
-            </div>
-            <div class="col bg-secondary" id="col-2">column 2
-                <div class="card"><div class="card-body">Hello3</div></div>
-                <div class="card"><div class="card-body">Hello4</div></div>
-
-            </div>
-        </div>
-    </div>
-    <button type="button" class="btn btn-dark w-100">Register for Free</button>
+</div>
 
 
-<footer th:replace="partials :: footer"></footer>
+<button type="button" class="btn btn-dark w-100">Register for Free</button>
+
+
+<footer th:replace="fragments/partials :: footer"></footer>
+<script src="//static.filestackapi.com/filestack-js/1.x.x/filestack.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', function () {
+        //DO NOT PUSH WITH API KEY
+    const apikey = 'API KEY';
+    const client = filestack.init(apikey);
+    const options = {
+            maxFiles: 20,
+            uploadInBackground: false,
+            onOpen: () => console.log('opened!'),
+        onUploadDone: (res) => console.log(res),
+};
+    $()
+    client.picker(options).open();
+});
+</script>
+
 </body>
 </html>
